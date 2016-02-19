@@ -134,8 +134,8 @@ def get_connection(alias=DEFAULT_CONNECTION_NAME, reconnect=False):
             if not isinstance(conn_settings['replicaSet'], basestring):
                 conn_settings.pop('replicaSet', None)
             if not IS_PYMONGO_3:
-                connection_class = MongoReplicaSetClient
-                conn_settings['hosts_or_uri'] = conn_settings.pop('host', None)
+                connection_class = MongoClient
+                #conn_settings['hosts_or_uri'] = conn_settings.pop('host', None)
 
         try:
             connection = None
